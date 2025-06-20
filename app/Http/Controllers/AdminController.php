@@ -9,27 +9,36 @@ class AdminController extends Controller
 {
     function login(Request $req){
         $validate = $req->validate([
-            'name' => 'required|string',
-            'password' => 'required|string',
+            'name' => 'required|string|min:4',
+            'password' => 'required|string|min:5',
         ]);
-        if($validate){
+
+        
+            
+      
             $admin = Admin::where('name', $req->input('name'))
                             ->where('password', $req->input('password'))
                             ->first();
-            // // return $req->input('name') . " logged in successfully";
             // $admin = Admin::where([
             //     'name' => $req->name,
             //     'password' => $req->password,
             // ])->first();
-            if($admin){
-            
-            return view('Auth.AdminDashboard', [
+
+            if (!$admin) {
+                // custome error validation
+                $validate = $req->validate(
+                    ['user'=>'required'] , [
+                        "user.required"=>"User Does Not Exist Please add Valid Name and Password"
+                    ]
+                );
+            } else {
+                return view('Auth.AdminDashboard', [
                 'admin' => $admin,
             ]);
-        }else{
-            return "Invalid credentials";
-        }
-    }
+            }
+
+            
+    
         
     }
 }
