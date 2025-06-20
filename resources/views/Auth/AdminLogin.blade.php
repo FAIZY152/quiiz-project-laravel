@@ -8,10 +8,11 @@
 <body class="min-h-screen  flex items-center justify-center bg-gray-100">
   <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
     <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Admin Login</h2>
-    <form action="/admin-dashboard" method="POST" class="space-y-4 ">
+    <form action="/admin-login" method="POST" class="space-y-4 ">
+        @csrf
       <div>
-        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-        <input type="text" id="username" name="username" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
       </div>
       <div>
         <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
