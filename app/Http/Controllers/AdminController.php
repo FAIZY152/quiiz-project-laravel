@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Route;
 use App\Models\Admin; 
+
 
 class AdminController extends Controller
 {
@@ -32,13 +36,14 @@ class AdminController extends Controller
                     ]
                 );
             } else {
-                return view('Auth.AdminDashboard', [
-                'admin' => $admin,
-            ]);
+                Session::put('admin', $admin);
+                return redirect('admin-dashboard');
             }
+    }
 
-            
+    function dashboard(Request $req){
+            $admin=  Session::get('admin');
+        return view('Auth.AdminDashboard' , ['admin' => $admin]);
     
-        
     }
 }

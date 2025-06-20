@@ -7,6 +7,7 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <h1>Hi Admin {{  $admin->name }}</h1>
+    <h1>Admin Dashboard</h1>
+    <h1>Hi , {{ $admin->name }}  Welcome to Admin Dashboard</h1>
 </body>
 </html>
