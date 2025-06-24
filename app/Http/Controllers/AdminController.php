@@ -44,4 +44,9 @@ class AdminController extends Controller
         return view('Layout.AdminDashboard' , ['admin' => $admin]);
     
     }
+    function category(Request $req){
+            $admin=  Session::get('admin');
+        return view('Layout.category' , ['admin' => $admin]);
+    
+    }
 }

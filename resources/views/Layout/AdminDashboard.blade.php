@@ -10,16 +10,7 @@
 <body class="bg-gray-100 font-sans">
 
   <!-- Header Navbar -->
-  <header class="bg-white shadow p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-gray-800">Quiz Dashboard</h1>
-    <div class="flex items-center gap-4 px-1">
-    <li class="hover:text-yellow-400 list-none cursor-pointer">Dashboard</li>
-    <li class="hover:text-yellow-400 list-none cursor-pointer">Categories</li>
-    <li class="hover:text-yellow-400 list-none cursor-pointer">Quizzes</li>
-    <li class="hover:text-yellow-400 list-none cursor-pointer">Users</li>
-    <li class="hover:text-yellow-400 list-none cursor-pointer">Logout</li>
-    </div>
-  </header>
+     <x-navbar />
 
   <div class="flex">
 
