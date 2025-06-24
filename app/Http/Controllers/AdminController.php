@@ -17,8 +17,6 @@ class AdminController extends Controller
             'password' => 'required|string|min:5',
         ]);
 
-        
-            
       
             $admin = Admin::where('name', $req->input('name'))
                             ->where('password', $req->input('password'))
@@ -43,7 +41,7 @@ class AdminController extends Controller
 
     function dashboard(Request $req){
             $admin=  Session::get('admin');
-        return view('Auth.AdminDashboard' , ['admin' => $admin]);
+        return view('Layout.AdminDashboard' , ['admin' => $admin]);
     
     }
 }
