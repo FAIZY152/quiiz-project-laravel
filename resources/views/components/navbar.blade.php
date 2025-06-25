@@ -1,3 +1,5 @@
+@props(['admin'])
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
 <body>
     <nav class="bg-gray-900 shadow-lg w-full">
     <header class="bg-white shadow p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-gray-800">Quiz Dashboard</h1>
+    <h1 class="text-2xl font-bold text-gray-800">Quiz Dashboard </h1>
     <div class="flex items-center gap-4 px-1">
     <a href="/admin-dashboard" class="hover:text-yellow-400 list-none cursor-pointer">Dashboard</a>
     <a href="/admin-category" class="hover:text-yellow-400 list-none cursor-pointer">Categories</a>
