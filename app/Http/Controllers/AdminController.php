@@ -41,12 +41,16 @@ class AdminController extends Controller
 
     function dashboard(Request $req){
             $admin=  Session::get('admin');
-        return view('Layout.AdminDashboard' , ['admin' => $admin]);
-    
+            if (!$admin) {
+                redirect('admin-login');
+            }
+            return view('Layout.AdminDashboard' , [
+                'admin' => $admin,
+            ]);
     }
-    function category(Request $req){
-            $admin=  Session::get('admin');
-        return view('Layout.category' , ['admin' => $admin]);
-    
+    function logout() {
+        Session::forget('admin');
+        return redirect('admin-login');
     }
+ 
 }
