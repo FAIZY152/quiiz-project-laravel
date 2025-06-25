@@ -48,6 +48,13 @@ class AdminController extends Controller
                 'admin' => $admin,
             ]);
     }
+    function category(Request $req){
+            $admin=  Session::get('admin');
+           
+            return view('pages.category' , [
+                'admin' => $admin,
+            ]);
+    }
     function logout() {
         Session::forget('admin');
         return redirect('admin-login');
